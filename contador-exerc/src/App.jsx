@@ -5,6 +5,15 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(10)
+  var sortear = () => {
+    var sorteio = Math.floor(Math.random()*100)+1
+    if(sorteio > 50){
+      setCount(count => count -1)
+    }else{
+      setCount(count => count +1)
+    }
+  }
+
 
   return (
     <>
@@ -18,10 +27,10 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 3)}>
+        <button onClick={sortear}>
           count is {count}
         </button>
-        <p>{count > 50? "Chega!!!": "Clica mais"}</p>
+        <p>{count}</p>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
