@@ -14,18 +14,18 @@ function App() {
     }
   }
   // ou para deixar diferentes tipos de cores
-  // var Cores = () => {
-  //   if (count >= 0 && count <= 10) {
-  //     return { fundo: 'orange', cor: 'black' }
-  //   } else if (count >= 11 && count <= 20) {
-  //     return { fundo: 'blue', cor: 'white' }
-  //   } else if (count >= 21 && count <= 30) {
-  //     return { fundo: 'green', cor: 'white' }
-  //   } else {
-  //     return { fundo: 'black', cor: 'white' }
-  //   }
-  // }
-  // var cores = Cores()
+  var Cores = () => {
+    if (count >= 0 && count <= 10) {
+      return { fundo: 'blue', cor: 'white' }
+    } else if (count >= 11 && count <= 20) {
+      return { fundo: 'yellow', cor: 'black' }
+    } else if (count >= 21 && count <= 30) {
+      return { fundo: 'green', cor: 'white' }
+    } else {
+      return { fundo: 'black', cor: 'white' }
+    }
+  }
+  var cores = Cores()
 
   return (
     <>
@@ -39,8 +39,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        {/* style={{backgroundColor: cores.fundo, color: cores.cor}} */}
-        <button onClick={sortear} style={{backgroundColor: "darkblue", color: "white"}} >
+        <button onClick={sortear} style={{backgroundColor: cores.fundo, color: cores.cor }} >
           count is {count}
         </button>
         <p>{count}</p>
