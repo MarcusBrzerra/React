@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -8,12 +8,24 @@ function App() {
   var sortear = () => {
     var sorteio = Math.floor(Math.random()*100)+1
     if(sorteio > 50){
-      setCount(count => count -1)
+      setCount(count => count -3)
     }else{
-      setCount(count => count +1)
+      setCount(count => count +3)
     }
   }
-
+  // ou para deixar diferentes tipos de cores
+  // var Cores = () => {
+  //   if (count >= 0 && count <= 10) {
+  //     return { fundo: 'orange', cor: 'black' }
+  //   } else if (count >= 11 && count <= 20) {
+  //     return { fundo: 'blue', cor: 'white' }
+  //   } else if (count >= 21 && count <= 30) {
+  //     return { fundo: 'green', cor: 'white' }
+  //   } else {
+  //     return { fundo: 'black', cor: 'white' }
+  //   }
+  // }
+  // var cores = Cores()
 
   return (
     <>
@@ -27,7 +39,8 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={sortear}>
+        {/* style={{backgroundColor: cores.fundo, color: cores.cor}} */}
+        <button onClick={sortear} style={{backgroundColor: "darkblue", color: "white"}} >
           count is {count}
         </button>
         <p>{count}</p>
