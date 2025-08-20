@@ -21,6 +21,7 @@ function App() {
         <button onClick={() => setCount((count) => count + 3)}>
           count is {count}
         </button>
+        <p>{count > 50? "Chega!!!": "Clica mais"}</p>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
