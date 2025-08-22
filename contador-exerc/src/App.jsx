@@ -1,10 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(10)
+  const [mensagem, setmensagem] = useState(" ")
+  useEffect(() => {
+    if(count >= 0 && count < 6){
+      setmensagem("Boa madrugada")
+    }else if(count >= 6 && count < 12){
+      setmensagem("Bom dia")
+    }else if(count >= 12 && count < 18){
+      setmensagem("Boa tarde")
+    }else if(count >= 18 && count < 24){
+      setmensagem("Boa noite")
+    }else{
+      setCount(0)
+    }
+  }, [count])
+
+  // Sortear o numero
   var sortear = () => {
     var sorteio = Math.floor(Math.random()*100)+1
     if(sorteio > 50){
@@ -43,6 +59,7 @@ function App() {
           count is {count}
         </button>
         <p>{count}</p>
+        <p>{mensagem}</p>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
